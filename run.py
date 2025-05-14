@@ -14,6 +14,21 @@ class Board :
                 print("---|---|---")
         print()
 
+def get_player_input(board):
+    while True:
+        try:
+            move = int(input("Enter a number between 0 and 8: "))
+            if move > 8 or move < 0:
+                print('Number out of range. Try again')
+            elif board.grid[move] != " ":
+                print('This box is already taken. Try again')
+            else:
+                return move
+        except ValueError:
+            print("Not a number. Try again")
+
+    
+
 
 def main():
     """
@@ -21,6 +36,8 @@ def main():
     """
     board = Board()
     board.display_board()
+    move = get_player_input(board)
+    print(f"Player chose: {move}")
 
 main()
 
