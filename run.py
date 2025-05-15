@@ -35,9 +35,9 @@ def get_computer_input(board):
         if board.grid[computer_move] == " ":
             return computer_move
 
-def check_win(board):   
-    win_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-
+def check_win(board):
+    win_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]   
+    
     for i in win_combinations:
         if board.grid[i[0]] == board.grid[i[1]] == board.grid[i[2]] == 'X':
             print('You won !')
@@ -47,23 +47,28 @@ def check_win(board):
             return True
     return False
 
-# check draw
+def check_draw(board):
+    if " " not in board.grid:
+        print("It's a draw!")
+        return True
+    return False
 
 def play_game(board):
     while True:
-        if not check_win(board):
-            move = get_player_input(board)
-            board.grid[move] = 'X'
-            print(f"Player chose: {move}")
-            board.display_board()
-            if check_win(board):
-                break
-            computer_move = get_computer_input(board)
-            board.grid[computer_move] = 'O'
-            print(f"Computer chose: {computer_move}")
-            board.display_board()
-            if check_win(board):
-                break
+        move = get_player_input(board)
+        board.grid[move] = 'X'
+        print(f"Player chose: {move}")
+        board.display_board()
+        if check_win(board):
+            break
+        elif check_draw(board):
+            break
+        computer_move = get_computer_input(board)
+        board.grid[computer_move] = 'O'
+        print(f"Computer chose: {computer_move}")
+        board.display_board()
+        if check_win(board):
+            break
 
 
 
