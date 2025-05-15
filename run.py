@@ -47,11 +47,23 @@ def check_win(board):
             return True
     return False
 
-            
+# check draw
 
-
-
-
+def play_game(board):
+    while True:
+        if not check_win(board):
+            move = get_player_input(board)
+            board.grid[move] = 'X'
+            print(f"Player chose: {move}")
+            board.display_board()
+            if check_win(board):
+                break
+            computer_move = get_computer_input(board)
+            board.grid[computer_move] = 'O'
+            print(f"Computer chose: {computer_move}")
+            board.display_board()
+            if check_win(board):
+                break
 
 
 
@@ -61,16 +73,7 @@ def main():
     """
     board = Board()
     board.display_board()
-    move = get_player_input(board)
-    board.grid[move] = 'X'
-    print(f"Player chose: {move}")
-    board.display_board()
-    computer_move = get_computer_input(board)
-    board.grid[computer_move] = 'O'
-    print(f"Computer chose: {computer_move}")
-    board.display_board()
-    if check_win(board):
-        return
+    play_game(board)
 main()
 
         
