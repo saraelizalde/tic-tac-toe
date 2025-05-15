@@ -22,7 +22,7 @@ def get_player_input(board):
                 print('Number out of range. Try again')
             elif board.grid[move] != " ":
                 print('This box is already taken. Try again')
-            else:
+            else:              
                 return move
         except ValueError:
             print("Not a number. Try again")
@@ -37,8 +37,9 @@ def main():
     board = Board()
     board.display_board()
     move = get_player_input(board)
+    board.grid[move] = 'X'
     print(f"Player chose: {move}")
-
+    board.display_board()
 main()
 
         
