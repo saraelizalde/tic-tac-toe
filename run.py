@@ -1,3 +1,5 @@
+import random
+
 class Board :
     """
     Creates the board and displays it.
@@ -27,7 +29,13 @@ def get_player_input(board):
         except ValueError:
             print("Not a number. Try again")
 
-    
+def get_computer_input(board):
+    while True:
+        computer_move = random.randint(0, 8)
+        if board.grid[computer_move] == " ":
+            return computer_move
+
+
 
 
 def main():
@@ -39,6 +47,10 @@ def main():
     move = get_player_input(board)
     board.grid[move] = 'X'
     print(f"Player chose: {move}")
+    board.display_board()
+    computer_move = get_computer_input(board)
+    board.grid[computer_move] = 'O'
+    print(f"Computer chose: {computer_move}")
     board.display_board()
 main()
 
