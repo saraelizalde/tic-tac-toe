@@ -35,6 +35,23 @@ def get_computer_input(board):
         if board.grid[computer_move] == " ":
             return computer_move
 
+def check_win(board):   
+    win_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+
+    for i in win_combinations:
+        if board.grid[i[0]] == board.grid[i[1]] == board.grid[i[2]] == 'X':
+            print('You won !')
+            return True
+        elif board.grid[i[0]] == board.grid[i[1]] == board.grid[i[2]] == 'O':
+            print('The computer won :(')
+            return True
+    return False
+
+            
+
+
+
+
 
 
 
@@ -52,6 +69,8 @@ def main():
     board.grid[computer_move] = 'O'
     print(f"Computer chose: {computer_move}")
     board.display_board()
+    if check_win(board):
+        return
 main()
 
         
