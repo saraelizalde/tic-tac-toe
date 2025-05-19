@@ -70,15 +70,28 @@ def play_game(board):
         if check_win(board):
             break
 
+def play_again(board):    
+    while True:
+        answer = input('Do you want to play again? Type y for yes or n for no :').lower()
+        if answer == 'y':
+            return True
+        elif answer == 'n':
+            print('Thank you for playing tic tac toe with us !')
+            return False
+        else:
+            print("Not an y or a n.")
 
 
 def main():
     """
     Run all program functions
     """
-    board = Board()
-    board.display_board()
-    play_game(board)
+    while True :
+        board = Board()
+        board.display_board()
+        play_game(board)
+        if not play_again(board):
+            break
 main()
 
         
