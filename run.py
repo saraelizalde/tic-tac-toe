@@ -34,13 +34,13 @@ def get_player_input(board):
         try:
             move = int(input("Enter a number between 0 and 8: "))
             if move > 8 or move < 0:
-                print('Number out of range. Try again')
+                print('That number is out of range. Please enter a number between 0 and 8.')
             elif board.grid[move] != " ":
-                print('This box is already taken. Try again')
+                print('This spot is already taken. Try again')
             else:              
                 return move
         except ValueError:
-            print("Not a number. Try again")
+            print("Not a number. Please enter a number between 0 and 8.")
 
 def get_computer_input(board):
     """
