@@ -87,16 +87,6 @@ def play_game(board):
     The game continues until a player wins or the board is full, resulting in a draw.
     """
     while True:
-        print("Your turn:")
-        move = get_player_input(board)
-        board.grid[move] = 'X'
-        print(f"Player chose: {move}")
-        board.display_board()
-        if check_win(board):
-            break
-        elif check_draw(board):
-            break
-
         print("Computer's turn:")
         computer_move = get_computer_input(board)
         board.grid[computer_move] = 'O'
@@ -104,6 +94,19 @@ def play_game(board):
         board.display_board()
         if check_win(board):
             break
+        elif check_draw(board):
+            break
+
+        print("Your turn:")
+        move = get_player_input(board)
+        board.grid[move] = 'X'
+        print(f"Player chose: {move}")
+        board.display_board()
+        if check_win(board):
+            break
+
+
+
 
 def play_again(board):  
     """
@@ -128,7 +131,8 @@ def main():
     """
     print("Welcome to Tic Tac Toe!")
     print("Your goal is to align three 'X' symbols before the computer aligns three 'O'.")
-    print("Choose a number between 0 and 8 to place your 'X'. The board positions are numbered like this:")
+    print("Choose a number between 0 and 8 to place your 'X'. " \
+    "The board positions are numbered like this:")
     print(" 0 | 1 | 2 ")
     print("---|---|---")
     print(" 3 | 4 | 5 ")

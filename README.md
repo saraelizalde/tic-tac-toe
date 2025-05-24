@@ -97,6 +97,7 @@ This project was deployed using Code Institute's mock terminal for Heroky
    - Fork or clone this repository
    - Create a new Heroku app
    - Set the buildbacks to Python and NodeJS in that order
+   - Set config vag to: key: PORT and value: 8000
    - Link the Heroku app to the repository
    - Click on Deploy
 
