@@ -64,7 +64,13 @@ I have manually tested this project by doing the following:
 
 ### Bugs
 
+- ??
+- ??
+
 ### Remaining Bugs
+
+- ??
+- ??
 
 ### Validator Testing
 

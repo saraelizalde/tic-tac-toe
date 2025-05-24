@@ -123,6 +123,15 @@ def main():
     """
     Run all program functions
     """
+    print("Welcome to Tic Tac Toe!")
+    print("Your goal is to align three 'X' symbols before the computer aligns three 'O'.")
+    print("Choose a number between 0 and 8 to place your 'X'. The board positions are numbered like this:")
+    print(" 0 | 1 | 2 ")
+    print("---|---|---")
+    print(" 3 | 4 | 5 ")
+    print("---|---|---")
+    print(" 6 | 7 | 8 \n")
+    print("Now here is the board, it's your turn!\n")
     while True :
         board = Board()
         board.display_board()
