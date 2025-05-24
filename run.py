@@ -87,6 +87,7 @@ def play_game(board):
     The game continues until a player wins or the board is full, resulting in a draw.
     """
     while True:
+        print("Your turn:")
         move = get_player_input(board)
         board.grid[move] = 'X'
         print(f"Player chose: {move}")
@@ -95,6 +96,8 @@ def play_game(board):
             break
         elif check_draw(board):
             break
+
+        print("Computer's turn:")
         computer_move = get_computer_input(board)
         board.grid[computer_move] = 'O'
         print(f"Computer chose: {computer_move}")
@@ -131,7 +134,7 @@ def main():
     print(" 3 | 4 | 5 ")
     print("---|---|---")
     print(" 6 | 7 | 8 \n")
-    print("Now here is the board, it's your turn!\n")
+    print("Now here is the board, let's play !\n")
     while True :
         board = Board()
         board.display_board()
