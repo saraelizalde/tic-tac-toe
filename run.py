@@ -150,14 +150,15 @@ def main():
     """
     Run all program functions
     """
+    if not welcome_message():
+        return
+    
     while True :
-        board = Board()
-        
-        if not welcome_message():
-            break
+        board = Board()      
         play_game(board)
         if not play_again(board):
             break
+
 main()
 
         
