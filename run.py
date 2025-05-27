@@ -152,7 +152,7 @@ def main():
     """
     while True :
         board = Board()
-        board.display_board()
+        
         if not welcome_message():
             break
         play_game(board)
