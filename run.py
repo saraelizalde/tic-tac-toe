@@ -24,6 +24,27 @@ class Board :
                 print("---|---|---")
         print()
 
+def welcome_message():
+    print("Welcome to Tic Tac Toe!")
+    print("Your goal is to align three 'X' symbols before the computer aligns three 'O'.")
+    print("Choose a number between 0 and 8 to place your 'X'. " \
+    "The board positions are numbered like this:")
+    print(" 0 | 1 | 2 ")
+    print("---|---|---")
+    print(" 3 | 4 | 5 ")
+    print("---|---|---")
+    print(" 6 | 7 | 8 \n")
+    while True:
+        start_the_game = input("Are you ready to play ? (y/n):").lower()
+        if start_the_game == 'y' or start_the_game =='yes':
+            print("Now here is the board, let's play !\n")
+            return True
+        elif start_the_game == 'n' or start_the_game == 'no':
+            print('See you soon than!')
+            return False
+        else:
+            print("Not an y or a n.")
+
 def get_player_input(board):
     """    
     Prompts the player to enter a move.
@@ -116,9 +137,9 @@ def play_again(board):
     """  
     while True:
         answer = input('Do you want to play again? Type y for yes or n for no :').lower()
-        if answer == 'y':
+        if answer == 'y' or answer == 'yes':
             return True
-        elif answer == 'n':
+        elif answer == 'n' or answer == 'no':
             print('Thank you for playing tic tac toe with us !')
             return False
         else:
@@ -129,19 +150,11 @@ def main():
     """
     Run all program functions
     """
-    print("Welcome to Tic Tac Toe!")
-    print("Your goal is to align three 'X' symbols before the computer aligns three 'O'.")
-    print("Choose a number between 0 and 8 to place your 'X'. " \
-    "The board positions are numbered like this:")
-    print(" 0 | 1 | 2 ")
-    print("---|---|---")
-    print(" 3 | 4 | 5 ")
-    print("---|---|---")
-    print(" 6 | 7 | 8 \n")
-    print("Now here is the board, let's play !\n")
     while True :
         board = Board()
         board.display_board()
+        if not welcome_message():
+            break
         play_game(board)
         if not play_again(board):
             break
