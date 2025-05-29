@@ -7,19 +7,21 @@ Tic Tac Toe is a Python terminal game where the player and computer take turns p
 
 ## How to play
 
-When you run the program, you’ll see an empty Tic Tac Toe board displayed with 9 positions, numbered 0 through 8, representing each square on the grid. Your goal is to be the first to place three of your symbols (‘X’) in a horizontal, vertical, or diagonal line before the computer places three of its symbols (‘O’).
+When you run the program, you’ll be greeted with a welcome message explaining the objective and layout of the Tic Tac Toe board. Your goal is to place three of your symbols (‘X’) in a row — horizontally, vertically, or diagonally — before the computer places three of its symbols (‘O’).
 
-1. Entering your move: You will be prompted to enter a number between 0 and 8, corresponding to the position where you want to place your ‘X’. If you enter an invalid number or choose a spot that’s already taken, you’ll get a message asking you to try again.
+1. Start the Game: You’ll be asked if you're ready to play. Enter y or yes to begin, or n or no to exit.
 
-2. Displaying the board: After each move, the updated board is displayed, showing your move and the computer’s moves so far.
+2. Making a Move: On your turn, enter a number between 0 and 8 to place your ‘X’ on the board. The numbers correspond to board positions shown during the initial instructions.
 
-3. Computer’s turn: Once you place your ‘X’, the computer will automatically pick an empty spot for its ‘O’ and update the board.
+3. Computer’s Turn: After your move, the computer will automatically choose an available position to place its ‘O’.
 
-4. Checking for a winner or draw: After each turn, the game checks if either you or the computer has aligned three symbols and declares the winner, or if all spots are filled with no winner, it declares a draw.
+4. Board Updates: After each move (yours and the computer’s), the current state of the board will be displayed.
 
-5. Game continuation: The game continues alternating turns until there’s a winner or a draw.
+5. Win or Draw Check: After every turn, the game checks if either player has aligned three of their symbols. If so, the winner is announced. If the board is full with no winner, it's a draw.
 
-6. Play again option: Once the game ends, you’ll be asked if you want to play again. Enter ‘y’ for yes to start a new game or ‘n’ to exit.
+6. Play Again: After the game ends, you’ll be asked if you want to play again. Enter y or yes to play another round. If you enter n or no, the game will exit.
+
+
 
 ## Features
 
@@ -91,7 +93,7 @@ I have manually tested this project by doing the following:
 
 ## Deployment
 
-This project was deployed using Code Institute's mock terminal for Heroky
+This project was deployed using Code Institute's mock terminal for Heroku
 
 - Step for deployment:
    - Fork or clone this repository

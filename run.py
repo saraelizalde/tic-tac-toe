@@ -1,5 +1,6 @@
 import random
 
+
 class Board:
     """
     Creates the board and displays it.
@@ -18,17 +19,19 @@ class Board:
         """
         print()
         for row in range(3):
-            i= row * 3
+            i = row * 3
             print(f" {self.grid[i]} | {self.grid[i+1]} | {self.grid[i+2]} ")
             if row < 2:
                 print("---|---|---")
         print()
 
+
 def welcome_message():
     print("Welcome to Tic Tac Toe!")
-    print("Your goal is to align three 'X' symbols before the computer aligns three 'O'.")
-    print("Choose a number between 0 and 8 to place your 'X'. " \
-    "The board positions are numbered like this:")
+    print("Your goal is to align three 'X' symbols before the computer "
+          "aligns three 'O'.")
+    print("Choose a number between 0 and 8 to place your 'X'. "
+          "The board positions are numbered like this:")
     print(" 0 | 1 | 2 ")
     print("---|---|---")
     print(" 3 | 4 | 5 ")
@@ -36,7 +39,7 @@ def welcome_message():
     print(" 6 | 7 | 8 \n")
     while True:
         start_the_game = input("Are you ready to play ? (y/n):").lower()
-        if start_the_game == 'y' or start_the_game =='yes':
+        if start_the_game == 'y' or start_the_game == 'yes':
             print("Now here is the board, let's play !\n")
             return True
         elif start_the_game == 'n' or start_the_game == 'no':
@@ -45,23 +48,27 @@ def welcome_message():
         else:
             print("Please enter 'y' or 'n'.")
 
+
 def get_player_input(board):
-    """    
+    """
     Prompts the player to enter a move.
-    Ensures the input is a number between 0 and 8 and that the chosen cell is empty.
+    Ensures the input is a number between 0 and 8 and that the chosen cell is
+    empty.
     Repeats until a valid move is entered.
     """
     while True:
         try:
             move = int(input("Enter a number between 0 and 8: "))
             if move > 8 or move < 0:
-                print('That number is out of range. Please enter a number between 0 and 8.')
+                print('That number is out of range. Please enter a number'
+                      'between 0 and 8.')
             elif board.grid[move] != " ":
                 print('This spot is already taken. Try again')
-            else:              
+            else:
                 return move
         except ValueError:
-            print("Not a number. Please enter a number between 0 and 8.")
+            print('Not a number. Please enter a number between 0 and 8.')
+
 
 def get_computer_input(board):
     """
@@ -73,39 +80,51 @@ def get_computer_input(board):
         if board.grid[computer_move] == " ":
             return computer_move
 
+
 def check_win(board):
     """
     Checks if either the player or the computer has won the game.
     Evaluates all possible winning combinations on the board.
     If a win is detected, prints the winner and returns True.
     """
-    win_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]   
-    
+    win_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7],
+                        [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+
     for combo in win_combinations:
-        if board.grid[combo[0]] == board.grid[combo[1]] == board.grid[combo[2]] == 'X':
+        if (
+            board.grid[combo[0]] == board.grid[combo[1]] ==
+            board.grid[combo[2]] == 'X'
+        ):
             print('You won !')
             return True
-        elif board.grid[combo[0]] == board.grid[combo[1]] == board.grid[combo[2]] == 'O':
+        elif (
+            board.grid[combo[0]] == board.grid[combo[1]] ==
+            board.grid[combo[2]] == 'O'
+        ):
             print('The computer won :(')
             return True
     return False
 
+
 def check_draw(board):
     """
     Checks if the game has ended in a draw.
-    A draw occurs when all cells on the board are filled and there is no winner.
+    A draw occurs when all cells on the board are filled and there is
+    no winner.
     """
     if " " not in board.grid:
         print("It's a draw!")
         return True
     return False
 
+
 def play_game(board):
     """
     Manages the main game loop for a single round of Tic Tac Toe.
     Alternates turns between the player and the computer.
-    Updates the board after each move. 
-    The game continues until a player wins or the board is full, resulting in a draw.
+    Updates the board after each move.
+    The game continues until a player wins or the board is full,
+    resulting in a draw.
     """
     while True:
         print("Computer's turn:")
@@ -126,14 +145,17 @@ def play_game(board):
         if check_win(board):
             break
 
-def play_again():  
+
+def play_again():
     """
     Asks the player if they want to play another round of Tic Tac Toe.
-    Continuously prompts the user until a valid answer ('y' or 'n') is received.
+    Continuously prompts the user until a valid answer ('y' or 'n') is
+    received.
     Returns True if the user wants to play again, and False otherwise.
-    """  
+    """
     while True:
-        answer = input('Do you want to play again? Type y for yes or n for no :').lower()
+        answer = input('Do you want to play again? Type y for yes or n for '
+                       'no :').lower()
         if answer == 'y' or answer == 'yes':
             return True
         elif answer == 'n' or answer == 'no':
@@ -142,19 +164,19 @@ def play_again():
         else:
             print("Please enter 'y' or 'n'.")
 
+
 def main():
     """
     Run all program functions
     """
     if not welcome_message():
         return
-    
-    while True :
-        board = Board()      
+
+    while True:
+        board = Board()
         play_game(board)
         if not play_again():
             break
 
-main()
 
-        
+main()
