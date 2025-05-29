@@ -1,6 +1,6 @@
 import random
 
-class Board :
+class Board:
     """
     Creates the board and displays it.
     """
@@ -40,10 +40,10 @@ def welcome_message():
             print("Now here is the board, let's play !\n")
             return True
         elif start_the_game == 'n' or start_the_game == 'no':
-            print('See you soon than!')
+            print('See you soon then!')
             return False
         else:
-            print("Not an y or a n.")
+            print("Please enter 'y' or 'n'.")
 
 def get_player_input(board):
     """    
@@ -126,10 +126,7 @@ def play_game(board):
         if check_win(board):
             break
 
-
-
-
-def play_again(board):  
+def play_again():  
     """
     Asks the player if they want to play another round of Tic Tac Toe.
     Continuously prompts the user until a valid answer ('y' or 'n') is received.
@@ -143,8 +140,7 @@ def play_again(board):
             print('Thank you for playing tic tac toe with us !')
             return False
         else:
-            print("Not an y or a n.")
-
+            print("Please enter 'y' or 'n'.")
 
 def main():
     """
@@ -156,7 +152,7 @@ def main():
     while True :
         board = Board()      
         play_game(board)
-        if not play_again(board):
+        if not play_again():
             break
 
 main()
