@@ -27,6 +27,11 @@ class Board:
 
 
 def welcome_message():
+    """
+    Displays the welcome message and instructions to the player.
+    Prompts the player to confirm if they want to start the game.
+    Returns True if the player agrees to start, False otherwise.
+    """
     print("Welcome to Tic Tac Toe!")
     print("Your goal is to align three 'X' symbols before the computer "
           "aligns three 'O'.")
