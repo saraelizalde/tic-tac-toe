@@ -30,13 +30,13 @@ def welcome_message():
     print("Welcome to Tic Tac Toe!")
     print("Your goal is to align three 'X' symbols before the computer "
           "aligns three 'O'.")
-    print("Choose a number between 0 and 8 to place your 'X'. "
+    print("Choose a number between 1 and 9 to place your 'X'. "
           "The board positions are numbered like this:")
-    print(" 0 | 1 | 2 ")
+    print(" 1 | 2 | 3 ")
     print("---|---|---")
-    print(" 3 | 4 | 5 ")
+    print(" 4 | 5 | 6 ")
     print("---|---|---")
-    print(" 6 | 7 | 8 \n")
+    print(" 7 | 8 | 9 \n")
     while True:
         start_the_game = input("Are you ready to play ? (y/n):").lower()
         if start_the_game == 'y' or start_the_game == 'yes':
@@ -52,22 +52,22 @@ def welcome_message():
 def get_player_input(board):
     """
     Prompts the player to enter a move.
-    Ensures the input is a number between 0 and 8 and that the chosen cell is
-    empty.
+    Ensures the input is a number between 1 and 9 and that the chosen cell is
+    empty. Converts the input to 0-based index for internal use.
     Repeats until a valid move is entered.
     """
     while True:
         try:
-            move = int(input("Enter a number between 0 and 8: "))
-            if move > 8 or move < 0:
-                print('That number is out of range. Please enter a number'
-                      'between 0 and 8.')
-            elif board.grid[move] != " ":
+            move = int(input("Enter a number between 1 and 9: ")) 
+            if move < 1 or move > 9:
+                print('That number is out of range. Please enter a number '
+                      'between 1 and 9.')
+            elif board.grid[move - 1] != " ":
                 print('This spot is already taken. Try again')
             else:
-                return move
+                return move - 1
         except ValueError:
-            print('Not a number. Please enter a number between 0 and 8.')
+            print('Not a number. Please enter a number between 1 and 9.')
 
 
 def get_computer_input(board):
@@ -130,7 +130,7 @@ def play_game(board):
         print("Computer's turn:")
         computer_move = get_computer_input(board)
         board.grid[computer_move] = 'O'
-        print(f"Computer chose: {computer_move}")
+        print(f"Computer chose: {computer_move + 1}")
         board.display_board()
         if check_win(board):
             break
@@ -140,7 +140,7 @@ def play_game(board):
         print("Your turn:")
         move = get_player_input(board)
         board.grid[move] = 'X'
-        print(f"Player chose: {move}")
+        print(f"Player chose: {move + 1}")
         board.display_board()
         if check_win(board):
             break
