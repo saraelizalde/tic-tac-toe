@@ -63,7 +63,7 @@ def get_player_input(board):
     """
     while True:
         try:
-            move = int(input("Enter a number between 1 and 9: ")) 
+            move = int(input("Enter a number between 1 and 9: "))
             if move < 1 or move > 9:
                 print('That number is out of range. Please enter a number '
                       'between 1 and 9.')
