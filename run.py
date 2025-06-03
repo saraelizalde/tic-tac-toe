@@ -49,7 +49,7 @@ def welcome_message():
     while True:
         start_the_game = input("Are you ready to play ? (y/n):").lower()
         if start_the_game == 'y' or start_the_game == 'yes':
-            print("Now here is the board, let's play !\n")
+            print("Now here is the board, let's play!\n")
             return True
         elif start_the_game == 'n' or start_the_game == 'no':
             print('See you soon then!')
@@ -104,7 +104,7 @@ def check_win(board):
             board.grid[combo[0]] == board.grid[combo[1]] ==
             board.grid[combo[2]] == 'X'
         ):
-            print('You won !')
+            print('You won!')
             return True
         elif (
             board.grid[combo[0]] == board.grid[combo[1]] ==
@@ -168,7 +168,7 @@ def play_again():
         if answer == 'y' or answer == 'yes':
             return True
         elif answer == 'n' or answer == 'no':
-            print('Thank you for playing tic tac toe with us !')
+            print('Thank you for playing tic tac toe with us!')
             return False
         else:
             print("Please enter 'y' or 'n'.")

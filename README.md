@@ -13,7 +13,7 @@ When you run the program, you’ll be greeted with a welcome message explaining 
 
 1. Start the Game: You’ll be asked if you're ready to play. Enter y or yes to begin, or n or no to exit.
 
-2. The computer makes a move : The computer will automatically select an available position to place its ‘O’.
+2. The computer makes a move: The computer will automatically select an available position to place its ‘O’.
 
 3. Making a Move: On your turn, enter a number between 1 and 9 to place your ‘X’ on the board. The numbers correspond to board positions shown during the initial instructions.
 
@@ -26,7 +26,7 @@ When you run the program, you’ll be greeted with a welcome message explaining 
 ## Project Purpose
 This project was developed to provide a simple, accessible, and engaging version of the classic game Tic Tac Toe that can be played directly in the terminal. The aim is to offer users a quick and interactive gaming experience without the need for complex installations or graphical interfaces.
 
-Tic Tac Toe was chosen because it's easy to understand, appeals to all ages, and presents a balanced challenge between player and computer. The game encourages strategic thinking, while its minimalist, text-based design ensures it's compatible with most environments — making it ideal for casual players, students, or anyone looking for a short mental break.
+Tic Tac Toe was chosen because it's easy to understand, appeals to all ages, and presents a balanced challenge between player and computer. The game encourages strategic thinking, while its minimalist, text-based design ensures it's compatible with most environments, making it ideal for casual players, students, or anyone looking for a short mental break.
 
 By incorporating features like a computer opponent, input validation, and the ability to replay games, the project prioritizes user interaction and replayability. Planned enhancements such as smarter AI and player customization aim to further improve the experience and keep it dynamic.
 
@@ -36,21 +36,31 @@ By incorporating features like a computer opponent, input validation, and the ab
 
 - 3x3 Board Display:  
 A visual representation of the Tic Tac Toe board is displayed in the terminal, updating after each move.
+
 ![Board](assets/images/Board.png)
+
 - Computer Opponent:  
 The game uses Python’s built-in random library to simulate a simple AI opponent. The computer selects random valid positions on the board, which ensures unpredictability and provides basic but effective single-player gameplay. The random module was chosen for its simplicity and availability without requiring any third-party dependencies.
+
 ![Computer Opponent](assets/images/Computers-turn.png)
+
 - User Input Handling:  
 The player is prompted to input a number between 1 and 9 to select a position on the board.
+
 ![User input](assets/images/Player-input.png)
+
 - Input Validation and Error Handling:  
 The game checks that the user input is:  
    - A number
+
    ![Error Handling when the input is not a number](assets/images/not-a-number.png)
    - Within the valid range (1–9)
+   
    ![Error Handling when the input is out of range](assets/images/out-of-range.png)
    - On an empty spot  
+   
    ![Error Handling when the input is not an empty spot](assets/images/taken-spot.png)
+
    If the input is invalid, a helpful message is displayed, and the user is asked to try again.
 
 ### Future Features
@@ -60,7 +70,7 @@ Replace the random move selection with a more strategic algorithm to make the co
 - Player Symbol Selection
 Allow the player to choose whether they want to play as ‘X’ or ‘O’ at the start of the game, instead of always defaulting to ‘X’.
 - Alternate Starting Player
-Introduce an option to decide who goes first — the player or the computer — or automatically alternate the starting player in each round for a fairer gameplay experience.
+Introduce an option to decide who goes first (the player or the computer) or automatically alternate the starting player in each round for a fairer gameplay experience.
 
 ## Data Model
 
@@ -81,15 +91,18 @@ I have manually tested this project by doing the following:
 - Given invalid inputs: 
    - Strings when numbers are expected
    - Out of range (1-9) numbers
-   - Non-empty spots.
+   - Non-empty spots
    - Pressing Enter without typing a value
 - Tested in my local terminal and the Code Institute Heroku terminal.
 - Played through the game multiple times to confirm the core functionality works:
-    - Verified that the player can win.
+    - Verified that the player can win
+
     ![Player wins](assets/images/Player-win.png)
-    - Verified that the computer can win.
+    - Verified that the computer can win
+
     ![Computer wins](assets/images/Computer-win.png)
-    - Verified that a draw is correctly detected when the board is full and there is no winner.
+    - Verified that a draw is correctly detected when the board is full and there is no winner
+
     ![Draw](assets/images/Draw.png)
 
 ### Bugs
@@ -154,13 +167,13 @@ The following flowchart outlines the game's core logic, including the turn struc
 This project was deployed using Code Institute's mock terminal for Heroku
 
 - Step for deployment:
-   1. Fork or clone this repository from Github: [https://github.com/saraelizalde/tic-tac-toe](https://github.com/saraelizalde/tic-tac-toe)
-   2. Create a new Heroku app: [Heroku link](https://www.heroku.com/)
-   3. In the settings:
+   - Fork or clone this repository from Github: [https://github.com/saraelizalde/tic-tac-toe](https://github.com/saraelizalde/tic-tac-toe)
+   - Create a new Heroku app: [Heroku link](https://www.heroku.com/)
+   - In the settings:
        - Set the buildpacks in this order: Python first, then NodeJS.
        - Set Config Vars to: key: PORT and value: 8000
-   4. Link the Heroku app to the repository
-   5. Click on Deploy
+   - Link the Heroku app to the repository
+   - Click on Deploy
 
 - Here is the link to the deployed website: [https://tic-tac-toe-the-game-31d8bb279e7c.herokuapp.com/](https://tic-tac-toe-the-game-31d8bb279e7c.herokuapp.com/) 
 - Here is the link to the github repository: [https://github.com/saraelizalde/tic-tac-toe](https://github.com/saraelizalde/tic-tac-toe)
@@ -169,22 +182,28 @@ This project was deployed using Code Institute's mock terminal for Heroku
 
 - ### Game Start
 Shows the welcome message and initial prompt asking if the player wants to begin.
+
 ![Game start](assets/images/game-start.png)
 - ### Computer’s Turn 
 The computer will begin the game by placing an ‘O’ in a random available spot.
+
 ![Computer's turn](assets/images/Computers-turn.png)
 - ### Your Turn
 After the computer moves, you’ll be prompted to choose a number between 1 and 9 to place your ‘X’.
+
 ![Your turn](assets/images/Player-input.png)
 - ### Win Detected
 The game detects a winning combination and announces the player or the computer as the winner.
+
 ![Computer wins](assets/images/Computer-win-board.png)
 ![Player wins](assets/images/Player-win-board.png)
 - ### Draw Detected
 If the board fills up without a winner, the game correctly ends in a draw.
+
 ![Draw detected](assets/images/Draw-board.png)
 - ### Play Again Prompt
 At the end of a game, the player is prompted to start a new game or exit.
+
 ![Yes to play again](assets/images/Play-again-yes.png)
 ![No to play again](assets/images/Play-again-no.png)
 
@@ -194,6 +213,6 @@ The random module from Python’s standard library is used to simulate the compu
 
 ## Credits
 
-- Flowcharts and mockups created with [draw.io](https://draw.io).
+- Flowchart created with [draw.io](https://app.diagrams.net/).
 - ChatGPT helped me with the phrasing and structure of this README.
 - Can Sücüllü my Code Institute mentor reviewed my code and providing valuable feedback.
