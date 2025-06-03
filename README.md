@@ -1,7 +1,7 @@
 
 # Tic Tac Toe
 
-**Tic Tac Toe** is a Python terminal game where the player and computer take turns placing X and O, aiming to align three symbols in a row, column, or diagonal to win.
+**Tic Tac Toe** is a terminal-based Python game where a player competes against a computer opponent by taking turns placing 'X' and 'O' on a 3x3 grid. The first to align three symbols horizontally, vertically, or diagonally wins.
 
 ![Mockup of Tic Tac Toe on devices](assets/images/Mockup-tic-tac-tow.png)
 
@@ -13,7 +13,7 @@ When you run the program, you’ll be greeted with a welcome message explaining 
 
 1. Start the Game: You’ll be asked if you're ready to play. Enter y or yes to begin, or n or no to exit.
 
-2. The computer makes a move : The computer will automatically choose an available position to place its ‘O’.
+2. The computer makes a move : The computer will automatically select an available position to place its ‘O’.
 
 3. Making a Move: On your turn, enter a number between 1 and 9 to place your ‘X’ on the board. The numbers correspond to board positions shown during the initial instructions.
 
@@ -116,6 +116,7 @@ There are currently no known remaining bugs. All identified issues during develo
 
 ## Flowchart
 
+The following flowchart outlines the game's core logic, including the turn structure and win/draw checks:
 ![Flowchart](assets/images/Flowchart.png)
 
 ## Development
@@ -123,7 +124,7 @@ There are currently no known remaining bugs. All identified issues during develo
 - I started by planning the flow of my code on paper. I outlined which functions I would need and in what order they should run. This helped me ensure the code would be structured and logical before writing it. Planning ahead also helped me avoid bugs and made the code easier to reuse and maintain.
 - I decided to create a Board class to manage the game board. It includes an __init__ method to initialize the board and a display_board method to print it. After some trial and error, I realized I needed to structure the methods carefully so the board wouldn't reset after each move. I added formatting with side and bottom separators to improve readability, and I used a condition to avoid adding a line under the last row to keep the layout symmetrical.
 [Link to the commit: Create Board class with __init__ and display_board methods and  main function](https://github.com/saraelizalde/tic-tac-toe/commit/bacdfdf1e9f2216eb5eba7973cfdb7e244c98563)
-- I created the main function to call and run all the other functions. At first, I struggled to see any output on the console because I forgot to create an instance of the Board class. Once I instantiated the board correctly, the game board appeared as expected.
+- I created the main function to call and run all the other functions. Initially, no output appeared because I had not created an instance of the Board class. Once I added it, the board displayed as expected.
 - Next, I created the get_player_input function, which includes error handling and checks to ensure the input is a number between 0 and 8. Initially, I tried to update the board inside this function using self.grid[move] = 'X', but that didn’t work because I was referencing self without being inside the class. I realized I needed to use board.grid[move] = 'X' instead. I also moved this line into the main function so that it could properly access the player's input and update the board.
 [Link to the commit: Create get_player_input function with input validation and error handling](https://github.com/saraelizalde/tic-tac-toe/commit/760e0d57bb0cf3ca648671bed644b2c1e6dce0cf)
 [Link to the commit: Update board with 'X' at player's chosen position](https://github.com/saraelizalde/tic-tac-toe/commit/b33369cd2781b0f4ccf55d92ae61faff7616926f)
@@ -153,13 +154,13 @@ There are currently no known remaining bugs. All identified issues during develo
 This project was deployed using Code Institute's mock terminal for Heroku
 
 - Step for deployment:
-   - Fork or clone this repository from Github: [https://github.com/saraelizalde/tic-tac-toe](https://github.com/saraelizalde/tic-tac-toe)
-   - Create a new Heroku app: [Heroku link](https://www.heroku.com/)
-   - In the settings:
-       - Set the buildpacks to Python and NodeJS in that order
+   1. Fork or clone this repository from Github: [https://github.com/saraelizalde/tic-tac-toe](https://github.com/saraelizalde/tic-tac-toe)
+   2. Create a new Heroku app: [Heroku link](https://www.heroku.com/)
+   3. In the settings:
+       - Set the buildpacks in this order: Python first, then NodeJS.
        - Set Config Vars to: key: PORT and value: 8000
-   - Link the Heroku app to the repository
-   - Click on Deploy
+   4. Link the Heroku app to the repository
+   5. Click on Deploy
 
 - Here is the link to the deployed website: [https://tic-tac-toe-the-game-31d8bb279e7c.herokuapp.com/](https://tic-tac-toe-the-game-31d8bb279e7c.herokuapp.com/) 
 - Here is the link to the github repository: [https://github.com/saraelizalde/tic-tac-toe](https://github.com/saraelizalde/tic-tac-toe)
