@@ -187,6 +187,10 @@ At the end of a game, the player is prompted to start a new game or exit.
 ![Yes to play again](assets/images/Play-again-yes.png)
 ![No to play again](assets/images/Play-again-no.png)
 
+## External Libraries Used
+- random – Python Standard Library module used to generate the computer's moves.
+The random module from Python’s standard library is used to simulate the computer's moves. It selects a valid empty cell at random, giving the computer unpredictable behavior, which makes the game more dynamic and engaging.
+
 ## Credits
 
 - Flowcharts and mockups created with [draw.io](https://draw.io).

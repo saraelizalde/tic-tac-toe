@@ -1,3 +1,7 @@
+"""
+External Modules:
+- random: Python standard library used for generating the computer's moves.
+"""
 import random
 
 
