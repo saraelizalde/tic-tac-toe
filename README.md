@@ -126,6 +126,9 @@ There are currently no known remaining bugs. All identified issues during develo
    - No errors were returned from PEP8.
    [PEP8 link](https://pep8ci.herokuapp.com/)
    ![PEP8 result](assets/images/PEP8-result.png)
+- Manual Inspection: The code was also reviewed manually for readability, consistent formatting, and adherence to best practices (exemple: meaningful variable names, proper indentation, and clean structure).
+
+All issues found were resolved to meet PEP 8 compliance.
 
 ## Flowchart
 
